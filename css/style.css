@@ -16,14 +16,17 @@ body {
 .footer {
   background-color: #9E768F;
   width: 100vw;
+  height: 6rem;
   position: fixed;
   bottom: 0;
-  height: 6rem;
   text-align: center;
   font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media (max-width: 93.75em) {
+    .footer {
+      position: inherit; } }
   .footer__email {
     color: white; }
 
@@ -43,15 +46,27 @@ body {
   padding: 0 8rem;
   display: flex;
   align-items: center; }
+  @media (max-width: 93.75em) {
+    .game-info {
+      flex-direction: column;
+      text-align: center;
+      margin-top: 2rem; } }
+  @media (max-width: 62.5em) {
+    .game-info {
+      padding: 0; } }
   .game-info__info-text {
     padding-left: 4rem; }
   .game-info__list {
     list-style-type: none; }
   .game-info__heading {
-    line-height: 5rem;
+    padding: 2rem 0;
     font-size: 1.8rem; }
   .game-info__game-banner {
     border-radius: 5px; }
+    @media (max-width: 62.5em) {
+      .game-info__game-banner {
+        width: 100%;
+        height: auto; } }
   .game-info__coming-soon {
     font-size: 3rem;
     padding: 3rem 0; }
@@ -60,6 +75,10 @@ body {
   padding-top: 12rem;
   margin: 0 8rem;
   font-size: 1.6rem; }
+  @media (max-width: 43.75em) {
+    .info {
+      margin: 0;
+      padding-top: 6rem; } }
   .info__container {
     background-color: white;
     box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);

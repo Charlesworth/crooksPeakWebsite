@@ -2,6 +2,10 @@
     padding-top: 12rem;
     margin: 0 8rem;
     font-size: 1.6rem;
+    @include respond(phone) {
+        margin: 0;
+        padding-top: 6rem;
+    }
     &__container {
         background-color: white;
         box-shadow: 0 2rem 2rem rgba($color-black, 0.4);

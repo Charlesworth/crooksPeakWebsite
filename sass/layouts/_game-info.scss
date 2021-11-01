@@ -2,6 +2,14 @@
     padding: 0 8rem;
     display: flex;
     align-items: center;
+    @include respond(tab-land) {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    @include respond(tab-port) {
+        padding: 0;
+    }
     &__info-text {
         padding-left: 4rem;
     }
@@ -9,11 +17,15 @@
         list-style-type: none;
     }
     &__heading {
-        line-height: 5rem;
+        padding: 2rem 0;
         font-size: 1.8rem;
     }
     &__game-banner {
         border-radius: 5px;
+        @include respond(tab-port) {
+            width: 100%;
+            height: auto;
+        }
     }
     &__coming-soon {
         font-size: 3rem;

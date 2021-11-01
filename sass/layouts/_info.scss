@@ -9,6 +9,13 @@
         padding: 2rem;
     }
     &__link {
+        &--heading {
+            &:link,
+            &:visited {
+                color: black;
+                text-decoration: none;
+            }
+        }
         &:link,
         &:visited {
             color: black;

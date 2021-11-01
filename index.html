@@ -1,41 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Crooks Peak: It's a VR game studio">
-    <meta name="author" content="Crooks Peak">
-    <title>Crooks Peak</title>
-
-    <script src="rainBackground.js"></script>
-    <style>
-        .blinking{animation:blinkingText 4.8s infinite}@keyframes blinkingText{0%{color:#000}3%{color:#000}5%{color:transparent}99%{color:transparent}100%{color:#000}}
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crooks Peak | VR Game Studio</title>
+    <link rel="stylesheet" href="css/style.css" type='text/css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body onload="draw();" style="background-color: purple;">
-    <div style="background-color: lightcoral;">
-        <h1>Crooks Peak</h1>
-        <p>
-            It's a VR game studio
-            </br>
-            <sub>"studio", it's <a href="https://ccochrane.com">this guy</a></sub>
-        </p>
-    </div>
-
-    <div style="background-color: lightcoral;">
-        <h2>Games</h2>
-        <a href="https://alienExtraction.com"><img src="alienExtraction.png" alt="picture not loaded"></a>
-        <h2>Wishlist Today! <span class="blinking"><i>..please, I'm begging you</i></span></h2>
-
-        </br>
-        <sub>just the one then...</sub>
-    </div>
-
-    <div style="background-color: lightcoral;">
-        <h2>Contact</h2>
-        <h4>Email: <a href="mailto:charlie@crookspeak.com">charlie@crookspeak.com</a></h4>
-    </div>
+<body>
+    <nav class="navbar">
+        <a href="#"><img src="images/logo.png" alt="logo" class="navbar__logo"></a>
+    </nav>
+    <section class="info">
+        <div class="info__container">
+            <p class="info__paragraph">
+                Crooks Peak is a VR Game Studio behind the game Alien Extraction. We say studio... It's really just
+                <a href="https://ccochrane.com/" class="info__link">this guy!</a>
+            </p>
+            <h2 class="info__game-heading">Alien Extraction</h2>
+            <img src="images/ae-wide.png" alt="ae-banner" class="info__game-banner">
+        </div>
+    </section>
 </body>
 
 </html>

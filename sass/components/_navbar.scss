@@ -1,0 +1,12 @@
+.navbar {
+    background-color: $navbar-bg-color;
+    width: 100vw;
+    position: fixed;
+    height: 6rem;
+    z-index: 100;
+    &__logo {
+        width: 30rem;
+        height: auto;
+        padding: 1rem 2rem;
+    }
+}

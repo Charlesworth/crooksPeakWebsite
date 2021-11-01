@@ -1,5 +1,5 @@
 .info {
-    padding-top: 8rem;
+    padding-top: 12rem;
     margin: 0 8rem;
     font-size: 1.6rem;
     &__container {
@@ -9,16 +9,14 @@
         padding: 2rem;
     }
     &__link {
-        &--heading {
-            &:link,
-            &:visited {
-                color: black;
-                text-decoration: none;
-            }
-        }
         &:link,
         &:visited {
             color: black;
         }
+    }
+    &__paragraph {
+        padding: 1rem 0 3rem 0;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
     }
 }

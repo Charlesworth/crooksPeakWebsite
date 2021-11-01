@@ -1,1 +1,21 @@
-.game-info {}
+.game-info {
+    padding: 0 8rem;
+    display: flex;
+    align-items: center;
+    &__info-text {
+        padding-left: 4rem;
+    }
+    &__list {
+        list-style-type: none;
+    }
+    &__heading {
+        line-height: 5rem;
+    }
+    &__game-banner {
+        border-radius: 5px;
+    }
+    &__coming-soon {
+        font-size: 3rem;
+        padding: 3rem 0;
+    }
+}

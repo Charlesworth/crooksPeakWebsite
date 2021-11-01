@@ -3,7 +3,8 @@
     width: 100vw;
     position: fixed;
     height: 6rem;
-    z-index: 100;
+    display: flex;
+    justify-content: center;
     &__logo {
         width: 30rem;
         height: auto;

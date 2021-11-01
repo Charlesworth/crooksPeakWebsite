@@ -1,0 +1,15 @@
+.footer {
+    background-color: $navbar-bg-color;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    height: 6rem;
+    text-align: center;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__email {
+        color: white;
+    }
+}

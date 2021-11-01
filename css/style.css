@@ -13,6 +13,20 @@ body {
   background-color: #F7ECE1;
   box-sizing: border-box; }
 
+.footer {
+  background-color: #9E768F;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  height: 6rem;
+  text-align: center;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .footer__email {
+    color: white; }
+
 .navbar {
   background-color: #9E768F;
   width: 100vw;
@@ -34,7 +48,8 @@ body {
   .game-info__list {
     list-style-type: none; }
   .game-info__heading {
-    line-height: 5rem; }
+    line-height: 5rem;
+    font-size: 1.8rem; }
   .game-info__game-banner {
     border-radius: 5px; }
   .game-info__coming-soon {

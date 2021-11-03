@@ -2,16 +2,20 @@
     background-color: $navbar-bg-color;
     width: 100vw;
     height: 6rem;
-    @include respond(tab-land) {
-        position: inherit;
-    }
     position: fixed;
     bottom: 0;
+    @include respond(tab-land) {
+        position: relative;
+    }
     text-align: center;
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    @include respond(phone) {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
     &__email {
         color: white;
         &:hover {

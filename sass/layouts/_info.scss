@@ -1,5 +1,7 @@
 .info {
     z-index: 1000;
+    position: relative;
+    opacity: 90%;
     color: $text-color;
     padding: 12rem 0;
     margin: 0 8rem;

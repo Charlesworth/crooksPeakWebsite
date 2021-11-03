@@ -19,22 +19,22 @@ body {
 
 @-webkit-keyframes STAR-MOVE {
   from {
-    right: 0;
+    left: 0;
     top: 0; }
   to {
-    right: -7000px;
+    left: -7000px;
     top: -1500px; } }
 
 @keyframes STAR-MOVE {
   from {
-    right: 0;
+    left: 0;
     top: 0; }
   to {
-    right: -7000px;
+    left: -7000px;
     top: -1500px; } }
 
 #background {
-  background: url(../images/background.png) repeat 5% 5%;
+  background: url(../images/background.png) repeat 5% 5% fixed;
   position: absolute;
   opacity: 15%;
   top: 0;
@@ -112,7 +112,7 @@ body {
       color: #b3b3b3; }
 
 .navbar {
-  z-index: 1000;
+  z-index: 1001;
   background-color: #9E768F;
   width: 100vw;
   position: fixed;
@@ -159,6 +159,8 @@ body {
 
 .info {
   z-index: 1000;
+  position: relative;
+  opacity: 90%;
   color: #F8F4E3;
   padding: 12rem 0;
   margin: 0 8rem;

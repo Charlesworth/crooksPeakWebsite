@@ -7,11 +7,15 @@
 
 html {
   font-size: 62.5%;
-  font-family: 'Lato', sans-serif; }
+  font-family: pressStart2P, sans-serif; }
 
 body {
   background-color: #F7ECE1;
   box-sizing: border-box; }
+
+@font-face {
+  font-family: pressStart2P;
+  src: url(../css/PressStart2P.ttf); }
 
 .footer {
   background-color: #9E768F;
@@ -74,7 +78,7 @@ body {
 .info {
   padding-top: 12rem;
   margin: 0 8rem;
-  font-size: 1.6rem; }
+  font-size: 1.2rem; }
   @media (max-width: 43.75em) {
     .info {
       margin: 0;

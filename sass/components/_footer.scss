@@ -14,5 +14,8 @@
     align-items: center;
     &__email {
         color: white;
+        &:hover {
+            color: darken(white, 30%);
+        }
     }
 }

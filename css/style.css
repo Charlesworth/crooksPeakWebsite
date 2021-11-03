@@ -33,6 +33,8 @@ body {
       position: inherit; } }
   .footer__email {
     color: white; }
+    .footer__email:hover {
+      color: #b3b3b3; }
 
 .navbar {
   background-color: #9E768F;
@@ -74,6 +76,12 @@ body {
   .game-info__coming-soon {
     font-size: 3rem;
     padding: 3rem 0; }
+  .game-info__link:link, .game-info__link:visited {
+    text-decoration: none;
+    color: black; }
+  .game-info__link:hover {
+    color: #845d75;
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4); }
 
 .info {
   padding-top: 12rem;

@@ -31,4 +31,15 @@
         font-size: 3rem;
         padding: 3rem 0;
     }
+    &__link {
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: black;
+        }
+        &:hover {
+            color: darken($navbar-bg-color, 10%);
+            text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+        }
+    }
 }

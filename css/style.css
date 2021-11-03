@@ -89,7 +89,8 @@ body {
 
 .footer {
   z-index: 1000;
-  background-color: #9E768F;
+  color: #F8F4E3;
+  background-color: #086a7b;
   width: 100vw;
   height: 6rem;
   position: fixed;
@@ -106,23 +107,22 @@ body {
     .footer {
       flex-direction: column;
       justify-content: space-evenly; } }
-  .footer__email {
-    color: white; }
-    .footer__email:hover {
-      color: #b3b3b3; }
+  .footer__email:link, .footer__email:visited {
+    color: #F8F4E3; }
+  .footer__email:hover {
+    color: #b3b3b3; }
 
 .navbar {
   z-index: 1001;
-  background-color: #9E768F;
+  font-size: 1.5rem;
+  background-color: #086a7b;
   width: 100vw;
   position: fixed;
   height: 6rem;
   display: flex;
-  justify-content: center; }
-  .navbar__logo {
-    width: 30rem;
-    height: auto;
-    padding: 1rem 2rem; }
+  justify-content: center;
+  align-items: center;
+  color: #F8F4E3; }
 
 .game-info {
   z-index: 1000;
@@ -154,7 +154,7 @@ body {
     text-decoration: none;
     color: #F8F4E3; }
   .game-info__link:hover {
-    color: #845d75;
+    color: #05414b;
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4); }
 
 .info {
@@ -177,7 +177,7 @@ body {
   .info__link:link, .info__link:visited {
     color: #F8F4E3; }
   .info__link:hover {
-    color: #9E768F; }
+    color: #086a7b; }
   .info__paragraph {
     padding: 1rem 0 3rem 0;
     text-align: center;

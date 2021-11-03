@@ -1,5 +1,6 @@
 .footer {
     z-index: 1000;
+    color: $text-color;
     background-color: $navbar-bg-color;
     width: 100vw;
     height: 6rem;
@@ -18,7 +19,10 @@
         justify-content: space-evenly;
     }
     &__email {
-        color: white;
+        &:link,
+        &:visited {
+            color: $text-color;
+        }
         &:hover {
             color: darken(white, 30%);
         }

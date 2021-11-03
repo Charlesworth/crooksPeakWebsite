@@ -62,8 +62,6 @@ body {
       padding: 0; } }
   .game-info__info-text {
     padding-left: 4rem; }
-  .game-info__list {
-    list-style-type: none; }
   .game-info__heading {
     padding: 2rem 0;
     font-size: 1.8rem; }

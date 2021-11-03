@@ -10,7 +10,7 @@ html {
   font-family: pressStart2P, sans-serif; }
 
 body {
-  background-color: #F7ECE1;
+  background-color: #39393A;
   box-sizing: border-box; }
 
 @font-face {
@@ -79,12 +79,13 @@ body {
     padding: 3rem 0; }
   .game-info__link:link, .game-info__link:visited {
     text-decoration: none;
-    color: black; }
+    color: #F8F4E3; }
   .game-info__link:hover {
     color: #845d75;
     text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4); }
 
 .info {
+  color: #F8F4E3;
   padding: 12rem 0;
   margin: 0 8rem;
   font-size: 1.2rem; }
@@ -93,7 +94,7 @@ body {
       margin: 0;
       padding: 6rem 0 0 0; } }
   .info__container {
-    background-color: white;
+    background-color: #020014;
     box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
     border-radius: 5px;
     padding: 2rem; }

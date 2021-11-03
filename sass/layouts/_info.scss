@@ -1,4 +1,5 @@
 .info {
+    color: $text-color;
     padding: 12rem 0;
     margin: 0 8rem;
     font-size: 1.2rem;
@@ -7,7 +8,7 @@
         padding: 6rem 0 0 0;
     }
     &__container {
-        background-color: white;
+        background-color: $content-bg-color;
         box-shadow: 0 2rem 2rem rgba($color-black, 0.4);
         border-radius: 5px;
         padding: 2rem;

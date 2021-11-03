@@ -31,7 +31,7 @@
         &:link,
         &:visited {
             text-decoration: none;
-            color: black;
+            color: $text-color;
         }
         &:hover {
             color: darken($navbar-bg-color, 10%);

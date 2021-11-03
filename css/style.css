@@ -99,7 +99,9 @@ body {
     border-radius: 5px;
     padding: 2rem; }
   .info__link:link, .info__link:visited {
-    color: black; }
+    color: #F8F4E3; }
+  .info__link:hover {
+    color: #9E768F; }
   .info__paragraph {
     padding: 1rem 0 3rem 0;
     text-align: center;

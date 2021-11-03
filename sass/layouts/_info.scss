@@ -16,7 +16,10 @@
     &__link {
         &:link,
         &:visited {
-            color: black;
+            color: $text-color;
+        }
+        &:hover {
+            color: $navbar-bg-color;
         }
     }
     &__paragraph {

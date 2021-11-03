@@ -36,7 +36,7 @@ body {
 #background {
   background: url(../images/background.png) repeat 5% 5% fixed;
   position: absolute;
-  opacity: 15%;
+  opacity: 70%;
   top: 0;
   left: 0;
   right: 0;
@@ -54,7 +54,7 @@ body {
 #midground {
   background: url(../images/midground.png) repeat 20% 20%;
   position: absolute;
-  opacity: 15%;
+  opacity: 70%;
   top: 0;
   left: 0;
   right: 0;
@@ -72,7 +72,7 @@ body {
 #foreground {
   background: url(../images/foreground.png) repeat 35% 35%;
   position: absolute;
-  opacity: 15%;
+  opacity: 70%;
   top: 0;
   left: 0;
   right: 0;

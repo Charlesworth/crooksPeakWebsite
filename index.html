@@ -1,41 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Crooks Peak: It's a VR game studio">
-    <meta name="author" content="Crooks Peak">
-    <title>Crooks Peak</title>
-
-    <script src="rainBackground.js"></script>
-    <style>
-        .blinking{animation:blinkingText 4.8s infinite}@keyframes blinkingText{0%{color:#000}3%{color:#000}5%{color:transparent}99%{color:transparent}100%{color:#000}}
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crooks Peak | VR Game Studio</title>
+    <link rel="stylesheet" href="css/style.css" type='text/css'>
 </head>
 
-<body onload="draw();" style="background-color: purple;">
-    <div style="background-color: lightcoral;">
+<body>
+    <nav class="navbar">
         <h1>Crooks Peak</h1>
-        <p>
-            It's a VR game studio
-            </br>
-            <sub>"studio", it's <a href="https://ccochrane.com">this guy</a></sub>
-        </p>
-    </div>
-
-    <div style="background-color: lightcoral;">
-        <h2>Games</h2>
-        <a href="https://alienExtraction.com"><img src="alienExtraction.png" alt="picture not loaded"></a>
-        <h2>Wishlist Today! <span class="blinking"><i>..please, I'm begging you</i></span></h2>
-
-        </br>
-        <sub>just the one then...</sub>
-    </div>
-
-    <div style="background-color: lightcoral;">
-        <h2>Contact</h2>
-        <h4>Email: <a href="mailto:charlie@crookspeak.com">charlie@crookspeak.com</a></h4>
-    </div>
+    </nav>
+    <section class="info">
+        <div class="info__container">
+            <p class="info__paragraph">
+                Crooks Peak is a VR Game Studio behind the game Alien Extraction. We say studio... It's really just
+                <a href="https://ccochrane.com/" class="info__link">this guy!</a>
+            </p>
+            <div class="game-info">
+                <div class="game-info__banner">
+                    <a href="https://alienextraction.com/">
+                        <img src="images/ae-wide.webp" alt="ae-banner" class="game-info__game-banner">
+                    </a>
+                </div>
+                <div class="game-info__info-text">
+                    <h4 class="game-info__heading">There's a big alien mess and somebody's gotta clean it up...</h4>
+                    <p class="game-info__text">Control an alien infested space station in this lighthearted strategy puzzle game. Guide Lenny the janitor through deadly and dangerous levels: sneak, burn, distract, pilot, blast and clean his way to safety. Control drones, check
+                        cameras and complete puzzles to solve the station's mysteries.
+                    </p>
+                    <p class="game-info__coming-soon">
+                        <a href="https://alienextraction.com/" class="game-info__link">
+                        Available March 2022
+                      </a>
+                    </p>
+                </div>
+            </div>
+    </section>
+    <footer class="footer">
+        Contact Us: &nbsp; <a href="mailto:charlie@crookspeak.com" class="footer__email">charlie@crookspeak.com</a>
+    </footer>
+    <div id="background"></div>
+    <div id="midground"></div>
+    <div id="foreground"></div>
 </body>
 
 </html>

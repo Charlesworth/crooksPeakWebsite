@@ -1,0 +1,33 @@
+.info {
+    z-index: 1000;
+    position: relative;
+    opacity: 90%;
+    color: $text-color;
+    padding: 12rem 0;
+    margin: 0 8rem;
+    font-size: 1.2rem;
+    @include respond(phone) {
+        margin: 0;
+        padding: 6rem 0 0 0;
+    }
+    &__container {
+        background-color: $content-bg-color;
+        box-shadow: 0 2rem 2rem rgba($color-black, 0.4);
+        border-radius: 5px;
+        padding: 2rem;
+    }
+    &__link {
+        &:link,
+        &:visited {
+            color: $text-color;
+        }
+        &:hover {
+            color: $navbar-bg-color;
+        }
+    }
+    &__paragraph {
+        padding: 1rem 0 3rem 0;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+}

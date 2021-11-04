@@ -1,0 +1,42 @@
+.game-info {
+    z-index: 1000;
+    padding: 0 8rem;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    @include respond(tab-land) {
+        flex-direction: column;
+    }
+    @include respond(tab-port) {
+        padding: 0;
+    }
+    &__info-text {
+        padding-left: 4rem;
+    }
+    &__heading {
+        padding: 2rem 0;
+        font-size: 1.8rem;
+    }
+    &__game-banner {
+        border-radius: 5px;
+        @include respond(tab-port) {
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__coming-soon {
+        font-size: 3rem;
+        padding: 3rem 0;
+    }
+    &__link {
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: $text-color;
+        }
+        &:hover {
+            color: darken($navbar-bg-color, 10%);
+            text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+        }
+    }
+}

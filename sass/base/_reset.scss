@@ -1,0 +1,22 @@
+*,
+*::after,
+*::before {
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: inherit
+}
+
+html {
+    font-size: 62.5%; // 1 rem = 10px; 10/16 = 62.5
+    font-family: pressStart2P, sans-serif;
+}
+
+body {
+    background-color: $body-bg-color;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: pressStart2P;
+    src: url(../css/PressStart2P.ttf);
+}

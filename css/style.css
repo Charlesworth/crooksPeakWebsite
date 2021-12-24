@@ -1,192 +1,121 @@
-*,
-*::after,
-*::before {
-  margin: 0rem;
-  padding: 0rem;
-  box-sizing: inherit; }
-
-html {
-  font-size: 62.5%;
-  font-family: pressStart2P, sans-serif; }
-  @media (max-width: 18.75em) {
-    html {
-      font-size: 50%; } }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --textcolor: #dadada;
+  --bgcolor: #141414;
+  --highlight: #ffc400;
+}
 
 body {
-  background-color: #111111;
-  box-sizing: border-box; }
-
-@font-face {
-  font-family: pressStart2P;
-  src: url(../css/PressStart2P.ttf); }
-
-@-webkit-keyframes STAR-MOVE {
-  from {
-    left: 0;
-    top: 0; }
-  to {
-    left: -7000px;
-    top: -1500px; } }
-
-@keyframes STAR-MOVE {
-  from {
-    left: 0;
-    top: 0; }
-  to {
-    left: -7000px;
-    top: -1500px; } }
-
-#background {
-  background: url(../images/background.png) repeat 5% 5%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  animation-name: STAR-MOVE;
-  animation-duration: 200s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: STAR-MOVE;
-  -webkit-animation-duration: 200s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite; }
-
-#midground {
-  background: url(../images/midground.png) repeat 20% 20%;
-  position: absolute;
-  opacity: 70%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-  animation-name: STAR-MOVE;
-  animation-duration: 150s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: STAR-MOVE;
-  -webkit-animation-duration: 150s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite; }
-
-#foreground {
-  background: url(../images/foreground.png) repeat 35% 35%;
-  position: absolute;
-  opacity: 70%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 3;
-  animation-name: STAR-MOVE;
-  animation-duration: 100s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: STAR-MOVE;
-  -webkit-animation-duration: 100s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite; }
-
-.footer {
-  z-index: 1000;
-  color: #F8F4E3;
-  background-color: #086a7b;
-  width: 100vw;
-  height: 7rem;
-  position: fixed;
-  bottom: 0;
-  text-align: center;
-  font-size: 1.2rem;
-  display: flex;
-  padding: 1rem;
-  justify-content: space-evenly;
-  flex-direction: column;
-  align-items: center; }
-  @media (max-width: 93.75em) {
-    .footer {
-      position: relative; } }
-  .footer__email:link, .footer__email:visited {
-    color: #F8F4E3; }
-  .footer__email:hover {
-    color: #b3b3b3; }
-  .footer__design {
-    right: 2rem;
-    font-size: 1rem;
-    font-family: sans-serif;
-    color: #a3a3a3a1; }
-    .footer__design--link:link, .footer__design--link:visited {
-      color: #a3a3a3a1;
-      text-decoration: none; }
-
-.navbar {
-  z-index: 1001;
-  font-size: 1.5rem;
-  background-color: #086a7b;
-  width: 100vw;
-  position: fixed;
-  height: 6rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #F8F4E3; }
-
-.game-info {
-  z-index: 1000;
-  padding: 0 8rem;
-  display: flex;
-  align-items: center;
-  margin-top: 2rem; }
-  @media (max-width: 93.75em) {
-    .game-info {
-      flex-direction: column; } }
-  @media (max-width: 62.5em) {
-    .game-info {
-      padding: 0; } }
-  .game-info__info-text {
-    padding-left: 4rem; }
-  .game-info__heading {
-    padding: 2rem 0;
-    font-size: 1.8rem; }
-  .game-info__game-banner {
-    border-radius: 5px; }
-    @media (max-width: 62.5em) {
-      .game-info__game-banner {
-        width: 100%;
-        height: auto; } }
-  .game-info__coming-soon {
-    font-size: 3rem;
-    padding: 3rem 0; }
-  .game-info__link:link, .game-info__link:visited {
-    text-decoration: none;
-    color: #F8F4E3; }
-  .game-info__link:hover {
-    color: #05414b;
-    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4); }
-
-.info {
-  z-index: 1000;
+  font-size: 18px;
+  font-family: system-ui, sans-serif;
+  line-height: 1.4;
+  color: var(--textcolor);
+  background: var(--bgcolor);
   position: relative;
-  opacity: 90%;
-  color: #F8F4E3;
-  padding: 12rem 0;
-  margin: 0 8rem;
-  font-size: 1.2rem; }
-  @media (max-width: 43.75em) {
-    .info {
-      margin: 0;
-      padding: 6rem 0 0 0; } }
-  .info__container {
-    background-color: #020014;
-    box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.4);
-    border-radius: 5px;
-    padding: 2rem; }
-  .info__link:link, .info__link:visited {
-    color: #F8F4E3; }
-  .info__link:hover {
-    color: #086a7b; }
-  .info__paragraph {
-    padding: 1rem 0 3rem 0;
-    text-align: center;
-    border-bottom: 1px solid #ddd; }
+  max-width: 64em;
+  /* remove this for a full-width layout */
+  margin: 0 auto;
+  /* centers the layout */
+}
+
+/* ------- Sections ------- */
+
+section {
+  padding: calc(6em + 5vw) 5vw 0 5vw;
+  display: none;
+  position: absolute;
+  top: 0;
+  min-height: max-content;
+  width: 100%;
+  background: var(--bgcolor);
+  background-clip: content-box;
+}
+
+section:target {
+  /* Show section */
+  display: block;
+}
+
+section#about {
+  /* Show #home by default */
+  display: block;
+}
+
+section h1 {
+  font-size: 1.2em;
+  margin: 0 0 1em 0;
+}
+
+/* ------- Header ------- */
+
+header {
+  padding: 5vw 5vw 0 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+header h1 {
+  font-size: 1.6em;
+  flex: 1;
+  /* pushes nav to the right */
+  white-space: nowrap;
+  padding: 0 5vw .5em 0;
+}
+
+nav a:not(:last-of-type) {
+  margin-right: 1.5vw;
+}
+
+/* ------- General ------- */
+
+a {
+  text-decoration: none;
+  color: var(--highlight);
+}
+
+a:hover {
+  border-bottom: 1px solid;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0 0 1em 0;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+abbr[title]:hover {
+  opacity: .7;
+  cursor: help;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  fill: currentColor;
+  margin-bottom: 1em;
+}
+
+/* ------- Smaller screens ------- */
+
+@media only screen and (max-width: 680px) {
+  body {
+      font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  /* Fix for older webkit versions */
+  nav {
+      width: 100%;
+  }
+}

@@ -2,49 +2,66 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crooks Peak | VR Game Studio</title>
-    <link rel="stylesheet" href="css/style.css" type='text/css'>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Crooks Peak</title>
+    <meta name="description" content="VR game studio">
+
+    <style>*{margin:0;padding:0;box-sizing:border-box;--textcolor:#dadada;--bgcolor:#141414;--highlight:#ffc400}body{font-size:18px;font-family:system-ui,sans-serif;line-height:1.4;color:var(--textcolor);background:var(--bgcolor);position:relative;max-width:64em;margin:0 auto}section{padding:calc(6em + 5vw) 5vw 0 5vw;display:none;position:absolute;top:0;min-height:max-content;width:100%;background:var(--bgcolor);background-clip:content-box}section:target{display:block}section#about{display:block}section h1{font-size:1.2em;margin:0 0 1em 0}header{padding:5vw 5vw 0 5vw;display:flex;flex-wrap:wrap;position:absolute;width:100%;z-index:2}header h1{font-size:1.6em;flex:1;white-space:nowrap;padding:0 5vw .5em 0}nav a:not(:last-of-type){margin-right:1.5vw}a{text-decoration:none;color:var(--highlight)}a:hover{border-bottom:1px solid}h2{font-size:1em;font-weight:600;margin:0 0 1em 0}abbr{text-decoration:none}abbr[title]:hover{opacity:.7;cursor:help}img{display:block;max-width:100%;height:auto;fill:currentColor;margin-bottom:1em}@media only screen and (max-width:680px){body{font-size:16px}}@media only screen and (max-width:540px){nav{width:100%}}</style>
+    <script>function newCanvasElement(e){var t=document.createElement("canvas");return t.style.position="fixed",t.style.top="0px",t.style.left="0px",t.style.zIndex=e,t}function setCanvasSize(e){e.width=document.documentElement.clientWidth,e.height=document.documentElement.clientHeight}function draw(){var e=newCanvasElement(-1);setCanvasSize(e),document.body.appendChild(e),window.onresize=function(){setCanvasSize(e)},warpEffect(e)}function warpEffect(e){const t=30;for(var n=[],i=0;i<t;i++)n.push({x:Math.random()*e.width,y:Math.random()*e.height,weight:Math.random()});var a=e.getContext("2d");window.requestAnimationFrame(function i(){a.clearRect(0,0,e.width,e.height);for(var o=0;o<t;o++){var r=n[o];a.font="50px serif",a.textAlign="center",a.textBaseline="middle",a.fillStyle="#616161",a.fillText("-",r.x,r.y)}!function(){for(var i=0;i<t;i++){var a=n[i];a.x+=Math.cos(a.weight)+.1,a.x>e.width+20&&(n[i]={x:-10,y:Math.random()*e.height,weight:a.weight})}}(),window.requestAnimationFrame(i)})}</script>
 </head>
 
-<body>
-    <nav class="navbar">
-        <h1>Crooks Peak</h1>
-    </nav>
-    <section class="info">
-        <div class="info__container">
-            <p class="info__paragraph">
-                Crooks Peak is a VR Game Studio behind the game Alien Extraction. We say studio... It's really just
-                <a href="https://ccochrane.com/" class="info__link">this guy!</a>
+<body onload="draw();">
+
+    <header>
+        <h1>
+            <a href="#about">Crooks Peak</a>
+        </h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#games">Games</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="about">
+            <p>
+                Crooks Peak is a
+                <abbr title="Virtual Reality">VR</abbr>
+                Game Studio headed up by
+                <a href="https://ccochrane.com">Charlie Cochrane</a>.
+                We focus on fun, accessible games that don't take themselves too seriously.
             </p>
-            <div class="game-info">
-                <div class="game-info__banner">
-                    <a href="https://alienextraction.com/">
-                        <img src="images/ae-wide.webp" alt="ae-banner" class="game-info__game-banner">
-                    </a>
-                </div>
-                <div class="game-info__info-text">
-                    <h4 class="game-info__heading">There's a big alien mess and somebody's gotta clean it up...</h4>
-                    <p class="game-info__text">Control an alien infested space station in this lighthearted strategy puzzle game. Guide Lenny the janitor through deadly and dangerous levels: sneak, burn, distract, pilot, blast and clean his way to safety. Control drones, check
-                        cameras and complete puzzles to solve the station's mysteries.
-                    </p>
-                    <p class="game-info__coming-soon">
-                        <a href="https://alienextraction.com/" class="game-info__link">
-                        Available March 2022
-                      </a>
-                    </p>
-                </div>
-            </div>
-    </section>
-    <footer class="footer">
-        <p>Contact Us: <a href="mailto:charlie@crookspeak.com" class="footer__email">charlie@crookspeak.com</a></p>
-        <div class="footer__design">Website designed by <a href="https://drewjennings.co.uk" class="footer__design--link">Drew Jennings</a></div>
-    </footer>
-    <div id="background"></div>
-    <div id="midground"></div>
-    <div id="foreground"></div>
+        </section>
+
+        <section id="games">
+
+            <h1>There's a big alien mess and somebody's gotta clean it up...</h1>
+
+            <a href="https://alienextraction.com/">
+                <img src="images/ae-wide.webp" alt="space janitor chilling in the stars">
+            </a>
+
+            <p>
+                <a href="https://alienextraction.com/">Alien extraction</a>
+                is our lighthearted puzzle stratergy game proudly releasing March 2022.
+                Sneak, distract and solve your way through an alien infested space station.
+                Use maps, cameras and drones to guide your friendly space janitor, Lenny,
+                through this challenging and fun filled adventure.
+            </p>
+
+        </section>
+
+        <section id="contact">
+            <h2>Email: <a href="mailto:charlie@crookspeak.com">charlie@crookspeak.com</a></h2>
+            <h2>Twitter: <a href="https://twitter.com/CrooksPeak">link</a></h2>
+        </section>
+
+    </main>
 </body>
 
 </html>

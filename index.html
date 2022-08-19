@@ -9,13 +9,14 @@
     <title>Crooks Peak</title>
     <meta name="description" content="VR game studio">
     <link rel="icon" href="favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            --textColour: #dadada;
+            --textColour: #b6b6b6;
             --bgColour: #141414;
             --crooksYellow: #ffc400;
         }
@@ -24,6 +25,7 @@
             font-size: 18px;
             font-family: system-ui, sans-serif;
             line-height: 1.4;
+            font-weight: bold;
             color: var(--textColour);
             background: var(--bgColour);
         }
@@ -36,8 +38,8 @@
 
         p {
             background: var(--bgColour);
-            padding-left: 10%;
-            padding-right: 10%;
+            margin-left: 5%;
+            margin-right: 5%;
             padding-bottom: 10px;
         }
 
@@ -46,7 +48,6 @@
         }
 
         section {
-            text-align: center;
             margin-top: 20px;
             padding-bottom: 20px;
         }
@@ -58,106 +59,123 @@
 
 <body onload="draw();">
 
-    <header style="text-align: center;">
+    <header style='text-align: center; background-image: url("images/ships.png"); height: 500px; background-size: cover; border-bottom: 8px dashed var(--crooksYellow);''>
         <img src="images/crooksPeak.svg" style="
-            background: var(--bgColour);
-            width:23%;
+            width:30%;
             max-width:200px;
+            padding-top: 5%;
         ">
-        <br />
+        <div></div>
         <img src="images/crooksPeakTitle.svg" style="
-            background: var(--bgColour);
-            width:23%;
+            width:30%;
             max-width:200px;
+            padding-top: 10px;
         ">
-        <nav style="background: var(--bgColour);">
-            <a href="#team">Team</a>
-            |
-            <a href="#games">Games</a>
-            |
-            <a href="#contact">Contact</a>
-        </nav>
     </header>
 
     <main>
-
         <section id="about" style="border-bottom: 8px dashed var(--crooksYellow);">
-            <p>
-                <a href="https://crookspeak.com/">Crooks Peak</a>
-                is a VR game studio in South West England.
-                <br />
-                We're proud to work with PlayStation, Meta and Valve.
-            </p>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-2 text ms-auto"></div>
+                    <div class="col-lg-8 text ms-auto">
+                        <h1><a href="#team">About</a></h1>
+                        
+                        <p>
+                            Crooks Peak is an independant game studio in the south west of England.
+                            <br />
+                            <br />
+                            Our games are VR only and focus on tension and narrative.
+                            <br />
+                            <br />
+                            We're proud to work with PlayStation, Meta and Valve.
+                        </p>
+                    </div>
+                    <div class="col-lg-2 text ms-auto"></div>
+                </div>
+            </div>
         </section>
-
-        <section id="team" style="border-bottom: 8px dashed var(--crooksYellow);">
-            <h1><a href="#team">The Team</a></h1>
-
-            <a href="https://alienextraction.com/">
-                <img src="images/team.jpg" style="max-width: 80%; border: 2px solid var(--crooksYellow);"
-                    alt="team picture of very beautiful people">
-            </a>
-            
-            <h3>Charlie (Left) - Developer</h3>
-            <p>
-                Development, bussiness and questionable voice acting.
-                <a href="https://www.linkedin.com/in/charlescochrane/">LinkedIn</a>, 
-                <a href="https://ccochrane.com/">Website</a>
-            </p>
-
-            <h3>Reddy boy (Right) - Top Dog</h3>
-            <p>
-                Generally confused about VR headsets but very supportive.
-            </p>
-        </section>
+          
 
         <section id="games" style="border-bottom: 8px dashed var(--crooksYellow);">
-            <h1><a href="#games">Our Games</a></h1>
+            <div class="container">
+                <div class="row">
 
-            <div>
-                <a href="https://alienextraction.com/">
-                    <img src="images/ae-wide.webp" style="max-width: 80%; border: 2px solid var(--crooksYellow);"
-                        alt="space janitor chilling in the stars">
-                </a>
-    
-                <p>
-                    <a href="https://alienextraction.com/">Alien Extraction</a>
-                    is our lighthearted puzzle strategy game proudly released 2022 on
-                    <a href="https://store.steampowered.com/app/1768730/Alien_Extraction/">Steam</a>
-                    and 
-                    <a href="https://www.oculus.com/experiences/quest/5141207052556425/">Meta Quest</a>.
-                    Guide Lenny the space janitor through deadly and dangerous levels: sneak, burn, distract, pilot, blast
-                    and clean his way to safety.
-                </p>
+                    <div class="col-lg-2 text ms-auto"></div>
+                    <div class="col-lg-8 text ms-auto">            
+                        <h1><a href="#games">Games</a></h1>
+
+                        <div>
+                            <a href="https://bygritalone.com/">
+                                <img src="images/topSecret.png" style="margin-left: 5%; width: 90%; border: 2px solid var(--crooksYellow);"
+                                    alt="top secret image">
+                            </a>
+                
+                            <p>
+                                <a href="https://bygritalone.com/">By Grit Alone</a>
+                                is our top secret next game, currently in pre-production.
+                                More details coming Autumn 2022.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 text ms-auto"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-2 text ms-auto"></div>
+                    <div class="col-lg-8 text ms-auto">
+                        <div>
+                            <a href="https://alienextraction.com/">
+                                <img src="images/ae-wide.webp" style="margin-left: 5%; width: 90%; border: 2px solid var(--crooksYellow);"
+                                    alt="space janitor chilling in the stars">
+                            </a>
+                
+                            <p>
+                                <a href="https://alienextraction.com/">Alien Extraction</a>
+                                is our lighthearted puzzle strategy game proudly released 2022 on
+                                <a href="https://store.steampowered.com/app/1768730/Alien_Extraction/">Steam</a>
+                                and 
+                                <a href="https://www.oculus.com/experiences/quest/5141207052556425/">Meta Quest</a>.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-2 text ms-auto"></div>
+                </div>
+
+
+
             </div>
 
             <div>
-                <a href="https://bygritalone.com/">
-                    <img src="images/topSecret.png" style="max-width: 80%; border: 2px solid var(--crooksYellow);"
-                        alt="top secret image">
-                </a>
-
-                <p>
-                    <a href="https://bygritalone.com/">By Grit Alone</a>
-                    (working title) is our top secret next game, currently in pre-production.
-                    More details coming Autumn 2022.
-                </p>
             </div>
         </section>
 
         <section id="contact">
-            <h1><a href="#contact">Contact Us</a></h1>
+            <div class="container">
+                <div class="row">
 
-            <p>
-                We love working with the press and streamers, please reach out for keys, assets or interviews.
-                Don't hesitate to get in touch with questions, suggestions, critiques and compliments!
-            </p>
-
-            <br />
-
-            <h2>Email: <a href="mailto:charlie@crookspeak.com">charlie@crookspeak.com</a></h2>
-            <h2>Bug Reports: <a href="https://alienextraction.com/bug">link</a></h2>
-            <h2>Twitter: <a href="https://twitter.com/CrooksPeak">link</a></h2>
+                    <div class="col-lg-2 text ms-auto"></div>
+                    <div class="col-lg-8 text ms-auto">
+                        <h1><a href="#contact">Contact</a></h1>
+            
+                        <p>
+                            We love working with the press and streamers, please reach out for keys, assets or interviews.
+                            <br />
+                            <br />
+                            Email: <a href="mailto:charlie@crookspeak.com">charlie@crookspeak.com</a>
+                            <br />
+                            Bug Reports: <a href="https://alienextraction.com/bug">link</a>
+                            <br />
+                            Twitter: <a href="https://twitter.com/CrooksPeak">link</a>
+                        </p>
+            
+            
+                    </div>
+                    <div class="col-lg-2 text ms-auto"></div>
+                </div>
+            </div>
         </section>
 
     </main>

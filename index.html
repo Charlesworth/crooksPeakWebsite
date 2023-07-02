@@ -25,15 +25,16 @@
             font-size: 18px;
             font-family: system-ui, sans-serif;
             line-height: 1.4;
-            font-weight: bold;
             color: var(--textColour);
             background: var(--bgColour);
         }
 
         a {
-            text-decoration: none;
             color: var(--crooksYellow);
             font-weight: bold;
+            text-shadow: 0px 0px 2px var(--crooksYellow), 0px 0px 1px var(--crooksYellow);
+            text-decoration-line: underline;
+            text-decoration: none;
         }
 
         p {
@@ -41,6 +42,8 @@
             margin-left: 5%;
             margin-right: 5%;
             padding-bottom: 10px;
+            text-shadow: 0px 0px 1px var(--crooksYellow), 0px 0px 1px var(--crooksYellow);
+            font-family: monospace;
         }
 
         h1 {
@@ -59,7 +62,7 @@
 
 <body onload="draw();">
 
-    <header style='text-align: center; background-image: url("images/ships.png"); height: 500px; background-size: cover; border-bottom: 8px dashed var(--crooksYellow);''>
+    <header style='text-align: center; background-image: url("images/ships.png"); height: 500px; background-size: cover; border-bottom: 2px solid var(--crooksYellow);''>
         <img src="images/crooksPeak.svg" style="
             width:30%;
             max-width:200px;
@@ -74,12 +77,12 @@
     </header>
 
     <main>
-        <section id="about" style="border-bottom: 8px dashed var(--crooksYellow);">
+        <section id="about">
             <div class="container">
                 <div class="row">
 
                     <div class="col-lg-2 text ms-auto"></div>
-                    <div class="col-lg-8 text ms-auto">
+                    <div class="col-lg-8 text ms-auto" style="border-bottom: 2px dashed var(--crooksYellow);">
                         <h1><a href="#about">About</a></h1>
                         
                         <p>
@@ -98,7 +101,7 @@
         </section>
           
 
-        <section id="games" style="border-bottom: 8px dashed var(--crooksYellow);">
+        <section id="games">
             <div class="container">
                 <div class="row">
 
@@ -114,7 +117,7 @@
                 
                             <p>
                                 <a href="https://bygritalone.com/">By Grit Alone</a>
-                                is our top secret next game, more details in summer 2023.
+                                is our top secret next game, more details in Autumn 2023.
                             </p>
                         </div>
                     </div>
@@ -123,7 +126,7 @@
 
                 <div class="row">
                     <div class="col-lg-2 text ms-auto"></div>
-                    <div class="col-lg-8 text ms-auto">
+                    <div class="col-lg-8 text ms-auto"  style="border-bottom: 2px dashed var(--crooksYellow);">
                         <div>
                             <a href="https://alienextraction.com/">
                                 <img src="images/ae-wide.webp" style="margin-left: 5%; width: 90%; border: 2px solid var(--crooksYellow);"

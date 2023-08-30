@@ -19,6 +19,7 @@
             --textColour: #b6b6b6;
             --bgColour: #141414;
             --crooksYellow: #ffc400;
+            --hoverColour: #003cff;
         }
 
         body {
@@ -35,6 +36,11 @@
             text-shadow: 0px 0px 2px var(--crooksYellow), 0px 0px 1px var(--crooksYellow);
             text-decoration-line: underline;
             text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--hoverColour);
+            text-shadow: 0px 0px 2px var(--hoverColour), 0px 0px 1px var(--hoverColour);
         }
 
         p {
@@ -77,6 +83,23 @@
     </header>
 
     <main>
+        <section id="links">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-2 text ms-auto"></div>
+                    <div class="col-lg-8 text ms-auto" style="border-bottom: 2px dashed var(--crooksYellow);">
+                        <p class="text-center">
+                            <a href="#about">About</a> |
+                            <a href="#games">Games</a> |
+                            <a href="#contact">Contact</a>
+                        </p>
+                    </div>
+                    <div class="col-lg-2 text ms-auto"></div>
+                </div>
+            </div>
+        </section>
+
         <section id="about">
             <div class="container">
                 <div class="row">
@@ -89,10 +112,10 @@
                             Crooks Peak is an independent game studio in the south west of England.
                             <br />
                             <br />
-                            Our VR games focus on tension and narrative.
+                            Our VR games focus on tension, action and narrative.
                             <br />
                             <br />
-                            We're proud to work with PlayStation, Meta, Valve and UK Games Fund.
+                            We're proud to work with Meta, Valve, PlayStation and UK Games Fund.
                         </p>
                     </div>
                     <div class="col-lg-2 text ms-auto"></div>
@@ -117,7 +140,7 @@
                 
                             <p>
                                 <a href="https://bygritalone.com/">By Grit Alone</a>
-                                is our top secret next game, more details in Autumn 2023.
+                                is our top secret next game, more details early 2024.
                             </p>
                         </div>
                     </div>
@@ -135,10 +158,15 @@
                 
                             <p>
                                 <a href="https://alienextraction.com/">Alien Extraction</a>
-                                is our lighthearted puzzle strategy game proudly released 2022 on
-                                <a href="https://store.steampowered.com/app/1768730/Alien_Extraction/">Steam</a>
-                                and 
-                                <a href="https://www.oculus.com/experiences/quest/5141207052556425/">Meta Quest</a>.
+                                is our lighthearted puzzle strategy game released 2022.
+                                <br />
+                                - Store Pages:
+                                <a href="https://store.steampowered.com/app/1768730/Alien_Extraction/">Steam</a>, 
+                                <a href="https://www.oculus.com/experiences/quest/5141207052556425/">Meta Quest</a>
+                                <br />
+                                - Press Kit: <a href="https://alienextraction.com/presskit.html">link</a>
+                                <br />
+                                - Bug Reports: <a href="https://alienextraction.com/bug.html">link</a>
                             </p>
 
                         </div>
@@ -167,8 +195,6 @@
                             <br />
                             <br />
                             Email: <a href="mailto:charlie@crookspeak.com">charlie@crookspeak.com</a>
-                            <br />
-                            Bug Reports: <a href="https://alienextraction.com/bug">link</a>
                             <br />
                             Twitter: <a href="https://twitter.com/CrooksPeak">link</a>
                         </p>

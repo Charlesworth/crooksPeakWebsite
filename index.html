@@ -2,218 +2,148 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <title>Crooks Peak</title>
-    <meta name="description" content="VR game studio">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crooks Peak // terminal</title>
+    <meta name="description" content="Crooks Peak — a tiny independent virtual reality game studio. Matrix terminal skin.">
     <link rel="icon" href="favicon.ico">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-
     <link rel="stylesheet" href="style.css">
-
-    <script>function newCanvasElement(e){var t=document.createElement("canvas");return t.style.position="fixed",t.style.top="0px",t.style.left="0px",t.style.zIndex=e,t}function setCanvasSize(e){e.width=document.documentElement.clientWidth,e.height=document.documentElement.clientHeight}function draw(){var e=newCanvasElement(-1);setCanvasSize(e),document.body.appendChild(e),window.onresize=function(){setCanvasSize(e)},warpEffect(e)}function warpEffect(e){const t=30;for(var n=[],i=0;i<t;i++)n.push({x:Math.random()*e.width,y:Math.random()*e.height,weight:Math.random()});var a=e.getContext("2d");window.requestAnimationFrame(function i(){a.clearRect(0,0,e.width,e.height);for(var o=0;o<t;o++){var r=n[o];a.font="50px serif",a.textAlign="center",a.textBaseline="middle",a.fillStyle="#616161",a.fillText("-",r.x,r.y)}!function(){for(var i=0;i<t;i++){var a=n[i];a.x+=Math.cos(a.weight)+.1,a.x>e.width+20&&(n[i]={x:-10,y:Math.random()*e.height,weight:a.weight})}}(),window.requestAnimationFrame(i)})}</script>
-
 </head>
 
-<body onload="draw();">
+<body>
+    <!-- Digital rain background -->
+    <canvas id="rain" aria-hidden="true"></canvas>
 
-    <header style='text-align: center; background-image: url("images/ships.png"); background-size: cover; border-bottom: 2px solid var(--crooksYellow);''>
-        <img src="images/crooksPeak.svg" style="
-            width:30%;
-            max-width:200px;
-            padding-top: 5%;
-        ">
-        <div></div>
-        <img src="images/crooksPeakTitle.svg" style="
-            width:30%;
-            max-width:200px;
-            padding-top: 10px;
-            padding-bottom: 5%;
-        ">
-    </header>
+    <!-- Scanline overlay -->
+    <div id="scanlines" aria-hidden="true"></div>
 
-    <main>
-        <section id="links">
-            <div class="container">
-                <div class="row">
+    <!-- Content column -->
+    <div id="terminal">
 
-                    <div class="col-lg-2 text ms-auto"></div>
-                    <div class="col-lg-8 text ms-auto" style="border-bottom: 2px dashed var(--crooksYellow);">
-                        <p class="text-center">
-                            <a href="#about">About</a> |
-                            <a href="#games">Games</a> |
-                            <!-- <a href="#articles">Docs</a> | -->
-                            <a href="#contact">Contact</a>
-                        </p>
-                    </div>
-                    <div class="col-lg-2 text ms-auto"></div>
-                </div>
-            </div>
-        </section>
+        <header id="masthead">
+            <a href="#about" class="logo-link" aria-label="Crooks Peak home">
+                <img src="images/crooksPeak.svg" alt="Crooks Peak logo" class="logo-mark">
+            </a>
+            <a href="#about" class="logo-link" aria-label="Crooks Peak home">
+                <img src="images/crooksPeakTitle.svg" alt="Crooks Peak wordmark" class="logo-title">
+            </a>
+            <p class="boot-line" id="bootLine" aria-hidden="true"></p>
+            <nav id="nav" aria-label="Primary">
+                <a href="#about">[1]&nbsp;about</a>
+                <a href="#games">[2]&nbsp;games</a>
+                <a href="#contact">[3]&nbsp;contact</a>
+            </nav>
+        </header>
 
-        <section id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2 text ms-auto"></div>
-                    <div class="col-lg-8 text ms-auto" style="border-bottom: 2px dashed var(--crooksYellow);">
-                        <h1>
-                            <a href="#about">About</a>
-                        </h1>
-                        <p>
-                            Crooks Peak is a tiny independant virtual reality game studio in the <a href="images/Wurzels.webp">south west</a> of England, focusing on action, narrative and fun.
-                            Mostly just <a href="https://ccochrane.com">Charlie</a> with a few friends and partners helping out.
-                            My <a href="articles/StudioTenets.html">Studio Tenets</a> keep me honest.
-                        </p>
-                    </div>
-                    <div class="col-lg-2 text ms-auto"></div>
-                </div>
-            </div>
-        </section>
-          
+        <main>
 
-        <section id="games">
-            <div class="container">
-                <div class="row">
+            <section id="about" class="window">
+                <div class="titlebar">$ ./about.exe</div>
+                <h2>&gt; ABOUT</h2>
+                <p>
+                    Crooks Peak is a solo independent game studio in the
+                    <a href="images/Wurzels.webp">South West</a> of England, focusing on action,
+                    narrative and fun. It's just <a href="https://ccochrane.com">Charlie</a>;
+                    my <a href="articles/StudioTenets.html">Studio Tenets</a> keep me honest.
+                </p>
+            </section>
 
-                    <div class="col-lg-2 text ms-auto"></div>
-                    <div class="col-lg-8 text ms-auto" style="border-bottom: 2px dashed var(--crooksYellow);">            
-                        <h1><a href="#games">Games</a></h1>
+            <section id="games" class="window">
+                <div class="titlebar">$ ./games.sh</div>
+                <h2>&gt; GAMES</h2>
 
-                        <div>
-                            <a href="https://fullsteamundead.com">
-                                <img src="images/FSU_KeyArt_LinkSite_800x450_V1.webp" style="margin-left: 5%; width: 90%; border: 2px solid var(--crooksYellow);"
-                                    alt="A flying steam train with zombies all around it">
-                            </a>
+                <article class="game">
+                    <a href="https://fullsteamundead.com" class="game-art" aria-label="Visit Full Steam Undead">
+                        <img src="images/FSU_KeyArt_LinkSite_800x450_V1.webp"
+                            alt="A flying steam train with zombies all around it">
+                    </a>
+                    <h3>&gt; FULL_STEAM_UNDEAD</h3>
+                    <p class="game-desc">
+                        Open world zombies &amp; steam trains in glorious VR. Releasing on
+                        SteamVR and Meta Quest in 2026.
+                    </p>
+                    <ul class="game-links">
+                        <li><a href="https://fullsteamundead.com">fullsteamundead.com</a></li>
+                        <li>Press&nbsp;Kit:&nbsp;<a href="https://drive.google.com/drive/folders/13MXSW0JYZ8j3d0Ha8bX0t1fDYmMZnqN5?usp=sharing">link</a></li>
+                        <li>Bug&nbsp;Reports:&nbsp;<a href="https://fullsteamundead.com/bug">link</a></li>
+                        <li>Translations:&nbsp;<a href="https://fullsteamundead.com/i18n">link</a></li>
+                    </ul>
+                </article>
 
-                            <p>
-                                <br />
-                                <a href="https://fullsteamundead.com" style="font-size: xx-large;">Full Steam Undead</a>
-                                Open World Zombies & Steam Trains in glorious VR. Releasing on SteamVR and Meta Quest in 2026.
-                                <br />
-                                - Press Kit: <a href="https://drive.google.com/drive/folders/13MXSW0JYZ8j3d0Ha8bX0t1fDYmMZnqN5?usp=sharing">link</a>
-                                <br />
-                                - Bug Reports: <a href="https://fullsteamundead.com/bug">link</a>
-                                <br />
-                                - Translations: <a href="https://fullsteamundead.com/i18n">link</a>
-                            </p>
+                <article class="game">
+                    <a href="https://bygritalone.com/" class="game-art" aria-label="Visit By Grit Alone">
+                        <img src="images/BGA_Cover_2_landscape.webp"
+                            alt="By Grit Alone — a guy shooting an alien on the hull of a starship">
+                    </a>
+                    <h3>&gt; BY_GRIT_ALONE</h3>
+                    <p class="game-desc">
+                        By Grit Alone is an action horror shooter, mixing frantic alien horde
+                        combat with a cosmic horror sci-fi anthology story, released 2024.
+                    </p>
+                    <ul class="game-links">
+                        <li><a href="https://bygritalone.com">bygritalone.com</a></li>
+                        <li>Press&nbsp;Kit:&nbsp;<a href="https://drive.google.com/drive/folders/1FRD8GKcDUd_5pSXsw06Dv7sNMC0mJhPr?usp=sharing">link</a></li>
+                        <li>Bug&nbsp;Reports:&nbsp;<a href="https://bygritalone.com/bug">link</a></li>
+                    </ul>
+                </article>
 
-                            <a href="https://bygritalone.com/">
-                                <img src="images/BGA_Cover_2_landscape.webp" style="margin-left: 5%; width: 90%; border: 2px solid var(--crooksYellow);"
-                                    alt="by grit alone kickass guy shooting an alien on the hull of a starship">
-                            </a>
+                <article class="game">
+                    <a href="https://alienextraction.com/" class="game-art" aria-label="Visit Alien Extraction">
+                        <img src="images/ae-wide.webp"
+                            alt="Alien Extraction — a goofy friendly looking janitor holding his thumbs up backed by deep space">
+                    </a>
+                    <h3>&gt; ALIEN_EXTRACTION</h3>
+                    <p class="game-desc">
+                        Alien Extraction is a silly funny lighthearted maze puzzle strategy game
+                        released 2022.
+                    </p>
+                    <ul class="game-links">
+                        <li><a href="https://alienextraction.com/">alienextraction.com</a></li>
+                    </ul>
+                </article>
 
-                            <p>
-                                <br />
-                                <a href="https://bygritalone.com" style="font-size: xx-large;">By Grit Alone</a>
-                                is a action horror shooter, mixing frantic alien horde combat with a cosmic horror sci-fi anthology story released 2024.
-                                <br />
-                                - Press Kit: <a href="https://drive.google.com/drive/folders/1FRD8GKcDUd_5pSXsw06Dv7sNMC0mJhPr?usp=sharing">link</a>
-                                <br />
-                                - Bug Reports: <a href="https://bygritalone.com/bug">link</a>
-                            </p>
+                <article class="game">
+                    <h3>&gt; RACETRONICVR</h3>
+                    <p class="game-desc">
+                        RacetronicVR is a free VR racing game that will give you motion sickness,
+                        released 2017.
+                    </p>
+                    <ul class="game-links">
+                        <li><a href="https://racetronicvr.com/">racetronicvr.com</a></li>
+                    </ul>
+                </article>
+            </section>
 
-                            <a href="https://alienextraction.com/">
-                                <img src="images/ae-wide.webp" style="margin-left: 5%; width: 90%; border: 2px solid var(--crooksYellow);"
-                                    alt="alien extraction a goofy friendly looking janitor holding his thumbs up backed by deep space">
-                            </a>
+            <section id="contact" class="window">
+                <div class="titlebar">$ ./contact.sh</div>
+                <h2>&gt; CONTACT</h2>
+                <p>
+                    I love working with press and creators! Keys, assets, interviews or any other
+                    way you can think of; reach out and I'll do my best to help.
+                </p>
+                <p class="contact-label">For General Enquiries:</p>
+                <ul class="contact-lines">
+                    <li>EMAIL:&nbsp;<a href="mailto:charlie@crookspeak.com">charlie@crookspeak.com</a></li>
+                    <li>BLUESKY:&nbsp;<a href="https://bsky.app/profile/crookspeak.bsky.social">link</a></li>
+                    <li>YOUTUBE:&nbsp;<a href="https://www.youtube.com/@crookspeak">link</a></li>
+                </ul>
+            </section>
 
-                            <p>
-                                <br />
-                                <a href="https://alienextraction.com/" style="font-size: xx-large;">Alien Extraction</a>
-                                is a silly funny lighthearted maze puzzle strategy game released 2022.
-                                <br />
-                            </p>
+        </main>
 
-                            <p>
-                                <br />
-                                <a href="https://racetronicvr.com/" style="font-size: xx-large;">RacetronicVR</a>
-                                is a free VR racing game that will give you motion sickness, released 2017. 
-                                <br />
-                            </p>
-                            
-                        </div>
-                    </div>
-                    <div class="col-lg-2 text ms-auto"></div>
-                </div>
+        <footer id="footer">
+            <p>&gt; Cheers for stopping by!</p>
+            <a href="https://crookspeak.com/" class="logo-link" aria-label="Crooks Peak home">
+                <img src="images/crooksPeak.svg" alt="Crooks Peak logo" class="logo-mark">
+            </a>
+            <a href="https://crookspeak.com/" class="logo-link" aria-label="Crooks Peak home">
+                <img src="images/crooksPeakTitle.svg" alt="Crooks Peak wordmark" class="logo-title">
+            </a>
+        </footer>
 
-            </div>
+    </div>
 
-            <div>
-            </div>
-        </section>
-
-        <!-- <section id="articles">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2 text ms-auto"></div>
-                    <div class="col-lg-8 text ms-auto" style="border-bottom: 2px dashed var(--crooksYellow);">
-                        <h1><a href="#articles">Documentation</a></h1>
-                        <p>
-                            I put this section here to keep myself honest. I'll add stuff here as I go and when games get announced.
-                            <br />
-                            - <a href="articles/StudioTenets.html">Studio Tenets</a>
-                        </p>
-                        <br />
-                    </div>
-                    <div class="col-lg-2 text ms-auto"></div>
-                </div>
-            </div>
-        </section> -->
-
-        <section id="contact">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-2 text ms-auto"></div>
-                    <div class="col-lg-8 text ms-auto" style="border-bottom: 2px dashed var(--crooksYellow);">
-                        <h1><a href="#contact">Contact</a></h1>
-            
-                        <p>
-                            I love working with press and creators!
-                            Keys, assets, interviews or any other way you can think of; reach out and I'll do my best to help.
-                            <br />
-                            <br />
-                            For General Enquiries:
-                            <br />
-                            Email: <a href="mailto:charlie@crookspeak.com">charlie@crookspeak.com</a>
-                            <br />
-                            <!-- Twitter: <a href="https://twitter.com/CrooksPeak">link</a>
-                            <br /> -->
-                            BlueSky: <a href="https://bsky.app/profile/crookspeak.bsky.social">link</a>
-                            <br />
-                            YouTube: <a href="https://www.youtube.com/@crookspeak">link</a>
-                        </p>
-            
-                    </div>
-                    <div class="col-lg-2 text ms-auto"></div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer style='text-align: center;'>
-        <p>
-            Cheers for stopping by!
-        </p>
-        <a href="https://crookspeak.com/">
-            <img src="images/crooksPeak.svg" style="
-                width:30%;
-                max-width: 100px;
-            ">
-        </a>
-        <div></div>
-        <a href="https://crookspeak.com/">
-            <img src="images/crooksPeakTitle.svg" style="
-                width:30%;
-                max-width: 100px;
-                padding-top: 6px;
-                padding-bottom: 6px;
-            ">
-        </a>
-    </footer>
+    <script src="rain.js" defer></script>
 </body>
 
 </html>

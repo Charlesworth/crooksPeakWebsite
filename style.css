@@ -1,52 +1,288 @@
-* {
+/* =====================================================================
+   Crooks Peak — Matrix terminal redesign
+   Pure black + phosphor green monospace. No external dependencies.
+   ===================================================================== */
+
+:root {
+    --green:        #00ff41;   /* primary phosphor green */
+    --green-bright: #c8ffc8;   /* leading / near-white green */
+    --green-link:   #7dff9e;   /* link green */
+    --green-link-h: #d2ffd2;   /* link hover */
+    --green-body:   #00b32d;   /* body text (readable on black) */
+    --green-dim:    #006b1f;   /* borders / dim chrome */
+    --bg-tint:      rgba(0, 10, 0, 0.85);
+    --glow:         0 0 6px rgba(0, 255, 65, 0.6);
+    --glow-strong:  0 0 10px rgba(0, 255, 65, 0.85);
+    --win-border:   #00ff41;
+    --mono: ui-monospace, "Cascadia Mono", "Courier New", monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    --textColour: #b6b6b6;
-    --bgColour: #141414;
-    --crooksYellow: #ffc400;
-    --hoverColour: #003cff;
+    background: #000;
+    color: var(--green-body);
+    font-family: var(--mono);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
-body {
-    font-size: 18px;
-    font-family: system-ui, sans-serif;
-    line-height: 1.4;
-    color: var(--textColour);
-    background: var(--bgColour);
+/* ---------- Background canvas + scanlines ---------- */
+#rain {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.42;
 }
+
+#scanlines {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0 1px,
+        transparent 1px 3px
+    );
+    mix-blend-mode: multiply;
+}
+
+/* ---------- Content column ---------- */
+#terminal {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px 18px 60px;
+}
+
+/* ---------- Headings & text ---------- */
+h1, h2, h3 {
+    color: var(--green);
+    text-shadow: var(--glow);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 0 0 0.6em;
+}
+
+h1 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+h2 { font-size: clamp(1.3rem, 4vw, 1.7rem); margin-top: 0; }
+h3 { font-size: 1.15rem; margin-bottom: 0.35em; }
+
+p { margin: 0 0 1em; color: var(--green-body); }
 
 a {
-    color: var(--crooksYellow);
-    font-weight: bold;
-    text-shadow: 0px 0px 2px var(--crooksYellow), 0px 0px 1px var(--crooksYellow);
-    text-decoration-line: underline;
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--hoverColour);
-    text-shadow: 0px 0px 2px var(--hoverColour), 0px 0px 1px var(--hoverColour);
-}
-
-p {
-    background: var(--bgColour);
-    margin-left: 5%;
-    margin-right: 5%;
-    padding-bottom: 10px;
-    font-family: monospace;
-}
-
-h1 {
-    padding-bottom: 10px;
-}
-
-h2 {
+    color: var(--green-link);
     text-decoration: underline;
-    font-family: monospace;
+    text-shadow: var(--glow);
+    transition: color 0.15s, text-shadow 0.15s;
+}
+a:hover, a:focus {
+    color: var(--green-link-h);
+    text-shadow: var(--glow-strong);
 }
 
-section {
-    margin-top: 20px;
-    padding-bottom: 20px;
+/* ---------- Blinking block cursor ---------- */
+.cursor {
+    display: inline-block;
+    color: var(--green);
+    text-shadow: var(--glow-strong);
+    margin-left: 2px;
+    animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+    0%, 50%   { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+}
+
+/* ---------- Masthead ---------- */
+#masthead {
+    text-align: center;
+    padding: 18px 0 8px;
+}
+.logo-link { text-decoration: none; display: inline-block; }
+.logo-mark, .logo-title {
+    display: block;
+    margin: 0 auto;
+    max-width: 70vw;
+    height: auto;
+    /* brightness(0) -> black, invert(1) -> white, then tint matrix-green.
+       Works regardless of source SVG colors; legible on black. */
+    filter: brightness(0) invert(1) sepia(1) hue-rotate(70deg) saturate(4) brightness(1)
+            drop-shadow(0 0 7px rgba(0, 255, 65, 0.65));
+    transition: filter 0.2s;
+}
+.logo-mark { width: 120px; }
+.logo-title { width: 220px; margin-top: 10px; }
+.logo-link:hover .logo-mark,
+.logo-link:hover .logo-title {
+    filter: brightness(0) invert(1) sepia(1) hue-rotate(70deg) saturate(5) brightness(1.2)
+            drop-shadow(0 0 10px rgba(0, 255, 65, 0.85));
+}
+
+.site-title {
+    margin-top: 0.4em;
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+}
+
+.boot-line {
+    color: var(--green-dim);
+    font-size: 0.85rem;
+    min-height: 1.2em;
+    margin: 0.4em 0 0;
+    text-shadow: none;
+}
+
+/* ---------- Nav ---------- */
+#nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 22px;
+    padding: 10px 0 6px;
+    font-size: 0.95rem;
+}
+#nav a {
+    color: var(--green);
+    text-decoration: none;
+    text-shadow: var(--glow);
+}
+#nav a:hover {
+    color: var(--green-bright);
+    text-shadow: var(--glow-strong);
+    text-decoration: underline;
+}
+
+/* ---------- Terminal windows ---------- */
+.window {
+    position: relative;
+    background: var(--bg-tint);
+    border: 1px solid var(--win-border);
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgba(0, 255, 65, 0.35);
+    padding: 18px 20px 22px;
+    margin-top: 22px;
+}
+
+.titlebar {
+    position: absolute;
+    top: -1px;
+    left: 12px;
+    transform: translateY(-50%);
+    background: #000;
+    color: var(--green);
+    font-size: 0.78rem;
+    padding: 2px 8px;
+    border: 1px solid var(--win-border);
+    border-radius: 3px;
+    text-shadow: var(--glow);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    max-width: calc(100% - 24px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ---------- Game cards ---------- */
+.game {
+    padding: 14px 0 6px;
+    border-top: 1px dashed var(--green-dim);
+}
+.game:first-of-type { border-top: none; padding-top: 4px; }
+
+.game-art {
+    display: block;
+    background: #000;
+    border: 1px solid var(--green);
+    box-shadow: 0 0 8px rgba(0, 255, 65, 0.25);
+    overflow: hidden;
+    margin: 0 0 0.8em;
+}
+.game-art img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: none;
+    filter: sepia(1) hue-rotate(70deg) saturate(1.4) brightness(0.9);
+    mix-blend-mode: screen;
+    transition: filter 0.25s, mix-blend-mode 0.25s;
+}
+.game-art:hover img,
+.game-art:focus img {
+    filter: none;
+    mix-blend-mode: normal;
+}
+
+.game-desc { margin-bottom: 0.5em; }
+
+.game-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.4em;
+    font-size: 0.92rem;
+}
+.game-links li::before {
+    content: "- ";
+    color: var(--green);
+}
+.game-links li { color: var(--green-body); }
+
+/* ---------- Contact ---------- */
+.contact-label { color: var(--green); text-shadow: var(--glow); }
+.contact-lines {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.contact-lines li::before {
+    content: "> ";
+    color: var(--green);
+    text-shadow: var(--glow);
+}
+.contact-lines li { color: var(--green-body); }
+
+/* ---------- Footer ---------- */
+#footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--green-dim);
+    color: var(--green);
+}
+#footer p { color: var(--green); text-shadow: var(--glow); }
+#footer .logo-mark,
+#footer .logo-title {
+    margin: 6px auto;
+    max-width: 70vw;
+    height: auto;
+    filter: brightness(0) invert(1) sepia(1) hue-rotate(70deg) saturate(4) brightness(1)
+            drop-shadow(0 0 7px rgba(0, 255, 65, 0.65));
+}
+#footer .logo-mark { width: 70px; }
+#footer .logo-title { width: 140px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    #terminal { padding: 14px 10px 50px; }
+    .window { padding: 16px 14px 18px; }
+    .titlebar { font-size: 0.7rem; }
+    #nav { gap: 10px 14px; font-size: 0.88rem; }
+    .logo-mark { width: 90px; }
+    .logo-title { width: 170px; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .cursor { animation: none; opacity: 1; }
+    .game-art img,
+    .logo-mark, .logo-title,
+    a { transition: none; }
+    #rain { opacity: 0.25; }
 }
